@@ -86,6 +86,6 @@ bool is_apple_internal_identifier(const char* identifier);
     @"com.Alfie.TrollInstallerX",\
     @"com.opa334.Dopamine",\
     @"com.opa334.Dopamine.roothide",\
-    @"com.opa334.Dopamine-roothide",\
+    @"com.luisepog.Dopamine-roothide",\
 ]
 
