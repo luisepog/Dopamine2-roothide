@@ -39,8 +39,8 @@ bool isSubPathOf(const char* parent, const char* child);
 bool string_has_prefix(const char *str, const char* prefix);
 bool string_has_suffix(const char* str, const char* suffix);
 
-bool hasTrollstoreMarker(const char* path);
-bool hasTrollstoreLiteMarker(const char* path);
+bool hasLuiseStoreMarker(const char* path);
+bool hasLuiseStoreLiteMarker(const char* path);
 
 void ensure_jbroot_symlink(const char* filepath);
 

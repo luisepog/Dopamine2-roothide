@@ -263,14 +263,14 @@
             [jetsamSpecifier setProperty:@"jetsamOptionTitles" forKey:@"titlesDataSource"];
             [specifiers addObject:jetsamSpecifier];
             
-            if (!envManager.isJailbroken && !envManager.isInstalledThroughTrollStore) {
+            if (!envManager.isJailbroken && !envManager.isInstalledThroughLuiseStore) {
                 PSSpecifier *removeJailbreakSwitchSpecifier = [PSSpecifier preferenceSpecifierNamed:DOLocalizedString(@"Button_Remove_Jailbreak") target:self set:@selector(setRemoveJailbreakEnabled:specifier:) get:defGetter detail:nil cell:PSSwitchCell edit:nil];
                 [removeJailbreakSwitchSpecifier setProperty:@YES forKey:@"enabled"];
                 [removeJailbreakSwitchSpecifier setProperty:@"removeJailbreakEnabled" forKey:@"key"];
                 [specifiers addObject:removeJailbreakSwitchSpecifier];
             }
             
-            if (envManager.isJailbroken || (envManager.isInstalledThroughTrollStore && envManager.isBootstrapped)) {
+            if (envManager.isJailbroken || (envManager.isInstalledThroughLuiseStore && envManager.isBootstrapped)) {
                 PSSpecifier *actionsGroupSpecifier = [PSSpecifier emptyGroupSpecifier];
                 actionsGroupSpecifier.name = DOLocalizedString(@"Section_Actions");
                 [specifiers addObject:actionsGroupSpecifier];
@@ -303,7 +303,7 @@
                     [reinstallPackageManagersSpecifier setProperty:@"reinstallPackageManagersPressed" forKey:@"action"];
                     [specifiers addObject:reinstallPackageManagersSpecifier];
                 }
-                if ((envManager.isJailbroken || envManager.isInstalledThroughTrollStore) && envManager.isBootstrapped) {
+                if ((envManager.isJailbroken || envManager.isInstalledThroughLuiseStore) && envManager.isBootstrapped) {
 /*
                     PSSpecifier *hideUnhideJailbreakSpecifier = [PSSpecifier emptyGroupSpecifier];
                     hideUnhideJailbreakSpecifier.target = self;
@@ -317,7 +317,7 @@
                         [hideUnhideJailbreakSpecifier setProperty:@"eye.slash" forKey:@"image"];
                     }
                     [hideUnhideJailbreakSpecifier setProperty:@"hideUnhideJailbreakPressed" forKey:@"action"];
-                    BOOL hideJailbreakButtonShown = (envManager.isJailbroken || (envManager.isInstalledThroughTrollStore && envManager.isBootstrapped && !envManager.isJailbreakHidden));
+                    BOOL hideJailbreakButtonShown = (envManager.isJailbroken || (envManager.isInstalledThroughLuiseStore && envManager.isBootstrapped && !envManager.isJailbreakHidden));
                     if (hideJailbreakButtonShown) {
                         [specifiers addObject:hideUnhideJailbreakSpecifier];
                     }

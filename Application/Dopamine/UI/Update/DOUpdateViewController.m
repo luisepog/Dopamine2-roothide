@@ -111,11 +111,11 @@
             return;
         }
 
-        if (![DOEnvironmentManager sharedManager].isJailbroken || [[DOUIManager sharedInstance] launchedReleaseNeedsManualUpdate] || ![DOEnvironmentManager sharedManager].isInstalledThroughTrollStore)
+        if (![DOEnvironmentManager sharedManager].isJailbroken || [[DOUIManager sharedInstance] launchedReleaseNeedsManualUpdate] || ![DOEnvironmentManager sharedManager].isInstalledThroughLuiseStore)
         {
-            if ([DOEnvironmentManager sharedManager].isInstalledThroughTrollStore) {
-                LSApplicationProxy *tsAppProxy = [LSApplicationProxy applicationProxyForIdentifier:@"com.opa334.TrollStore"];
-                if ([tsAppProxy.claimedURLSchemes containsObject:@"apple-magnifier"]) {
+            if ([DOEnvironmentManager sharedManager].isInstalledThroughLuiseStore) {
+                LSApplicationProxy *lsAppProxy = [LSApplicationProxy applicationProxyForIdentifier:@"com.luisepog.luisestore"];
+                if ([lsAppProxy.claimedURLSchemes containsObject:@"apple-magnifier"]) {
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"apple-magnifier://install?url=" stringByAppendingString:self.lastestDownloadUrl]] options:@{} completionHandler:nil];
                     return;
                 }

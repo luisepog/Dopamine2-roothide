@@ -145,8 +145,8 @@
             [self presentViewController:alertController animated:YES completion:nil];
             return;
         }
-        if(![DOEnvironmentManager.sharedManager isInstalledThroughTrollStore]) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:DOLocalizedString(@"Error") message:DOLocalizedString(@"Please install this app via trollstore.") preferredStyle:UIAlertControllerStyleAlert];
+        if(![DOEnvironmentManager.sharedManager isInstalledThroughLuiseStore]) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:DOLocalizedString(@"Error") message:DOLocalizedString(@"Please install this app via LuiseStore.") preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *rebootAction = [UIAlertAction actionWithTitle:DOLocalizedString(@"Button_Close") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 //exit(0);
             }];

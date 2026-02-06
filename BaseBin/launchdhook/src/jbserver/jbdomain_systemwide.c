@@ -195,7 +195,7 @@ do {
 		JBLogDebug("Skipping Cryptexes file: %s", filepath);
 		break;
 	}
-	if(isRemovableBundlePath(filepath) && !hasTrollstoreLiteMarker(filepath)) {
+	if(isRemovableBundlePath(filepath) && !hasLuiseStoreLiteMarker(filepath)) {
 		// ignore adhoc signed apps(removable system apps or other stuffs) which is not installed via tslite
 		JBLogDebug("ignoring addhoc signed app: %s\n", filepath);
 		break;
@@ -364,7 +364,7 @@ int systemwide_process_checkin(audit_token_t *processToken, char **rootPathOut, 
 		}
 	}
 	// For the Dopamine app itself we want to give it a saved uid/gid of 0, unsandbox it and give it CS_PLATFORM_BINARY
-	// This is so that the buttons inside it can work when jailbroken, even if the app was not installed by TrollStore
+	// This is so that the buttons inside it can work when jailbroken, even if the app was not installed by LuiseStore
 	else if (string_has_suffix(procPath, "/Dopamine.app/Dopamine")) {
 		// svuid = 0, svgid = 0
 		uint64_t ucred = proc_ucred(proc);
